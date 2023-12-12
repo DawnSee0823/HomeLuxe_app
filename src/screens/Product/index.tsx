@@ -9,7 +9,7 @@ export const Product: React.FC = () => {
     return (
         <Styled.ProductWrapper>
             <Styled.PreviewContainer>
-                <Image source={data.mainImage} alt='preview' />
+                <Image source={data.mainImage} alt='preview' style={{ width: '100%' }} />
             </Styled.PreviewContainer>
             <Styled.DesContainer>
                 <Styled.Manage>
