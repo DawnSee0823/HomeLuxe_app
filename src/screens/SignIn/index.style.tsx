@@ -5,15 +5,17 @@ import { fontValue } from "../../utils/global_styles";
 export const SignInWrapper = styled.View`
     align-items: center;
     background-color: ${COLORS.white};
+    height: 100%;
 `
 
 export const Logo = styled.View`
-    padding: 30px;
+    padding: 30px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 5px;
-    margin-bottom: 94px;
+    margin-bottom: 80px;
+    margin-top: 35px;
 `
 
 export const Top = styled.View` 
@@ -34,7 +36,7 @@ export const Divider = styled.View`
 export const Text = styled.Text`
     color: #0B0B0B;
     font-family: 'Merriweather';
-    font-size: ${fontValue(30)};
+    font-size: 30px;
     font-style: normal;
     font-weight: 400;
 `
@@ -47,6 +49,7 @@ export const FormContainer = styled.View`
     shadow-radius: 30px;
     elevation: 14;
     padding: 30px;
+    padding-bottom: 40px;
     width: 100%;
 `
 
@@ -61,13 +64,14 @@ export const FormButton = styled.View`
     flex-direction: column;
     gap: 35px;
     align-items: center;
+    padding-top: 15px;
 `
 
 export const TextButton = styled.Text`
-    color: #303030;
+    color:  #303030;
     text-align: center;
-    font-family: 'Nunito Sans';
-    font-size: 14px;
+    font-family: Nunito Sans;
+    font-size: 18px;
     font-style: normal;
     font-weight: 600;
 `

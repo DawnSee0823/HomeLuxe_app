@@ -4,6 +4,7 @@ export const HomeWrapper = styled.View`
     display: flex;
     padding: 24px;
     background-color: white;
+    height: 100%;
 `
 
 export const Top = styled.View`
@@ -40,7 +41,7 @@ export const TabArea = styled.View`
 `
 
 export const List = styled.View`
-    margin-top: 24px;
+    /* margin-top: 24px; */
     display: flex;
     flex-direction: row;
     gap: 10px;
@@ -50,13 +51,10 @@ export const List = styled.View`
 
 export const IntroArea = styled.View`
     margin-top: 30px;
-    width: 100vw;
-    display: grid;
-    grid-template-areas: 
-    'header header sidebar'
-'main main sidebar'
-'main main sidebar';
-    gap: 14px;
+    gap: 15px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 `
 
 export const Tab = styled.View<{ isSelected: boolean }>`
@@ -64,18 +62,21 @@ export const Tab = styled.View<{ isSelected: boolean }>`
     display: flex;
     align-items: center;
     padding: 10px;
-    padding-top: 27px;
+    padding-top: 37px;
     justify-content: flex-end;
     border-radius: 12px;
     background-color: ${props => props.isSelected ? '#FCF8F5' : 'transparent'};
-    gap: 12px;
+    gap: 10px;
 `
 
-export const TabIcon = styled.Text<{ isSelected: boolean }>`
+export const TabIcon = styled.View<{ isSelected: boolean }>`
     width: 44px;
     height: 44px;
     border-radius: 12px;
     background: ${(props) => props.isSelected ? `#303030` : `#F5F5F5`};
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `
 
 export const TabText = styled.Text<{ isSelected: boolean }>`
@@ -87,15 +88,15 @@ export const TabText = styled.Text<{ isSelected: boolean }>`
     letter-spacing: 0.25px;
 `
 
-export const MaskItem = styled.View`
-    width: 50%;
+export const MaskItem = styled.TouchableOpacity`
     display: flex;
     gap: 14px;
     align-items: center;
+    width: 47%;
 `
 
 export const Image = styled.View`
-    width: 157px;
+    width: 100%;
     height: 160px;
 `
 

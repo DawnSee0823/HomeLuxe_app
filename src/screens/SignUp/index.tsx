@@ -3,11 +3,8 @@ import * as Styled from './index.style'
 import { Input, InputProps } from 'react-native-elements'
 import { Image, TouchableOpacity } from 'react-native'
 import { useNavigation } from "@react-navigation/native"
-import UserSvg from '../../assets/svg/user.svg'
-import PasswordSvg from '../../assets/svg/password.svg'
-import EyeSvg from '../../assets/svg/eye.svg'
-import EyeOffSvg from '../../assets/svg/eye-disable.svg'
 import Logo from '../../assets/img/logo.png'
+import Icon from 'react-native-vector-icons/Octicons'
 import { fontValue } from '../../utils/global_styles'
 import { useTypedDispatch, useTypedSelector } from '../../store/typeHooks'
 import { loginUser } from '../../api/auth'
@@ -81,56 +78,81 @@ export const SignUp: React.FC = () => {
             </Styled.Logo>
             <Styled.FormContainer>
                 <Styled.InputGroup>
-                    {/* <Input
-                        label='Email'
+                    <Input
+                        label='Name'
                         ref={userinput}
                         // placeholder='Email'
-                        leftIcon={
-                            <UserSvg width={20} />
-                        }
+                        // leftIcon={
+                        //     <Icon name='user' size={20} />
+                        // }
                         onChangeText={value => handleChange(value, 'username')}
                         errorStyle={{ color: 'red' }}
                         errorMessage={isUserErr ? 'please input your username' : ''}
-                        style={{ fontSize: fontValue(20) }}
+                    // style={{ fontSize: fontValue(20) }}
+                    />
+                    <Input
+                        label='Email'
+                        ref={userinput}
+                        // placeholder='Email'
+                        // leftIcon={
+                        //     <Icon name='user' size={20} />
+                        // }
+                        onChangeText={value => handleChange(value, 'username')}
+                        errorStyle={{ color: 'red' }}
+                        errorMessage={isUserErr ? 'please input your username' : ''}
+                    // style={{ fontSize: fontValue(20) }}
                     />
                     <Input
                         label='Password'
                         ref={passinput}
                         // placeholder='Password'
                         secureTextEntry={credentials.securePassword}
-                        leftIcon={
-                            <PasswordSvg width={20} />
-                        }
+                        // leftIcon={
+                        //     <Icon name='password' size={20} />
+                        // }
                         onChangeText={value => handleChange(value, 'password')}
                         rightIcon={
                             credentials.securePassword ?
                                 <TouchableOpacity onPress={() => handleChange(false, 'securePassword')}>
-                                    <EyeSvg width={20} />
+                                    <Icon name='eye' size={20} />
                                 </TouchableOpacity> :
                                 <TouchableOpacity onPress={() => handleChange(true, 'securePassword')}>
-                                    <EyeOffSvg width={20} />
+                                    <Icon name='eye-closed' size={20} />
                                 </TouchableOpacity>
                         }
                         errorStyle={{ color: 'red' }}
                         errorMessage={isPassErr ? 'please input your password' : ''}
-                        style={{ fontSize: fontValue(20) }}
-                    /> */}
-                    <Input
-                        label='Name'
-                    />
-                    <Input
-                        label='Email'
-                    />
-                    <Input
-                        label='Password'
+                    // style={{ fontSize: fontValue(20) }}
                     />
                     <Input
                         label='Confirm Password'
+                        ref={passinput}
+                        // placeholder='Password'
+                        secureTextEntry={credentials.securePassword}
+                        // leftIcon={
+                        //     <Icon name='password' size={20} />
+                        // }
+                        onChangeText={value => handleChange(value, 'password')}
+                        rightIcon={
+                            credentials.securePassword ?
+                                <TouchableOpacity onPress={() => handleChange(false, 'securePassword')}>
+                                    <Icon name='eye' size={20} />
+                                </TouchableOpacity> :
+                                <TouchableOpacity onPress={() => handleChange(true, 'securePassword')}>
+                                    <Icon name='eye-closed' size={20} />
+                                </TouchableOpacity>
+                        }
+                        errorStyle={{ color: 'red' }}
+                        errorMessage={isPassErr ? 'please input your password' : ''}
+                    // style={{ fontSize: fontValue(20) }}
                     />
                 </Styled.InputGroup>
                 <Styled.FormButton>
-                    <GradientButton width={`200`} height='50' buttonText='Sign up' onPress={handleSignIn} flag={false} />
-                    <Styled.TextButton>Already have an account? Login</Styled.TextButton>
+                    <GradientButton width={`285px`} height='50px' buttonText='Sign up' onPress={handleSignIn} flag={true} />
+                    <Styled.TextButton>
+                        <Styled.Account>Already have an account?</Styled.Account>
+                        <Styled.Login onPress={() => navigation.navigate('SignIn')}>Login</Styled.Login>
+                    </Styled.TextButton>
                 </Styled.FormButton>
             </Styled.FormContainer>
         </Styled.SignInWrapper>

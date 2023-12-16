@@ -1,10 +1,10 @@
 import styled from "styled-components/native";
 import { COLORS } from "../../utils/app_config";
-import { fontValue } from "../../utils/global_styles";
 
 export const SignInWrapper = styled.View`
     align-items: center;
     background-color: ${COLORS.white};
+    height: 100%;
 `
 
 export const Logo = styled.View`
@@ -13,7 +13,7 @@ export const Logo = styled.View`
     flex-direction: column;
     align-items: center;
     gap: 5px;
-    margin-bottom: 31px;
+    margin-bottom: 15px;
 `
 
 export const Top = styled.View` 
@@ -34,7 +34,7 @@ export const Divider = styled.View`
 export const Text = styled.Text`
     color: #0B0B0B;
     font-family: 'Merriweather';
-    font-size: ${fontValue(30)};
+    font-size: 30px;
     font-style: normal;
     font-weight: 400;
 `
@@ -46,14 +46,14 @@ export const FormContainer = styled.View`
     shadow-opacity: 0.20;
     shadow-radius: 30px;
     elevation: 14;
-    padding: 30px;
+    padding: 40px 30px;
     width: 100%;
 `
 
 export const InputGroup = styled.View`
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
 `
 
 export const FormButton = styled.View`
@@ -61,13 +61,29 @@ export const FormButton = styled.View`
     flex-direction: column;
     gap: 35px;
     align-items: center;
+    margin-top: 20px;
 `
 
-export const TextButton = styled.Text`
-    color: #303030;
+export const TextButton = styled.View`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+`
+
+export const Account = styled.Text`
+    color: #808080;
     text-align: center;
-    font-family: 'Nunito Sans';
+    font-family: Nunito Sans;
     font-size: 14px;
     font-style: normal;
     font-weight: 600;
+`
+
+export const Login = styled.Text`
+    color: #303030;
+    font-family: Nunito Sans;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    padding-left: 5px;
 `

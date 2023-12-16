@@ -14,12 +14,13 @@ interface GradientProps {
     flag?: boolean;
 }
 
-export const ButtonContainer = styled.View`
+export const ButtonContainer = styled.TouchableOpacity<{ width?: string, height?: string, flag?: boolean }>`
     align-items: center;
     justify-content: center;
-    background-color: #242424;
-    height: 50px;
-    width: 285px;
+    background-color: ${props => props.flag ? '#242424' : '#fff'};
+    border: 1px solid #a5a5a5;
+    height: ${props => props.height ? props.height : '100%'};
+    width: ${props => props.width ? props.width : '100%'};
     display: flex;
     align-items: center;
     justify-content: center;
@@ -35,11 +36,12 @@ export const Button = styled.TouchableOpacity<CustomGradientProps>`
     height: ${(props) => (props.height ? props.height + 'px' : 'auto')};
 `
 
-export const TextContainer = styled.Text`
+export const TextContainer = styled.Text<{ size?: string, flag?: boolean }>`
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: ${props => props.flag ? 'white' : '#303030'};
+    font-size: ${props => props.size === 'md' ? '16px' : '20px'};
 `
 
 export const ButtonLabel = styled.Text<{ flag: boolean }>`

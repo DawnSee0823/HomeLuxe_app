@@ -21,13 +21,6 @@ const config = {
     resolver: {
         assetExts: resolver.assetExts.filter(ext => ext !== 'svg'),
         sourceExts: [...resolver.sourceExts, 'svg', 'jsx', 'js', 'ts', 'tsx'], // Add 'svg' to allow importing SVG files in JSX/TSX files
-    },
-    dependencies: {
-        'react-native-vector-icons': {
-            platforms: {
-                ios: null,
-            },
-        },
     }
 };
 

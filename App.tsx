@@ -10,7 +10,6 @@ import { NavigationContainer } from '@react-navigation/native';
 import AppNavigator from './src/navigation';
 import { Provider } from 'react-redux';
 import store from './src/store';
-import { Text } from 'react-native-elements';
 
 function App(): JSX.Element {
 

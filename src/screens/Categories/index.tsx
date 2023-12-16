@@ -5,14 +5,13 @@ import Icon from 'react-native-vector-icons/MaterialIcons'
 
 export const Category: React.FC = () => {
     return (
-        <Styled.HomeWrapper>
+        <Styled.CategoryWrapper>
             <Styled.Top>
                 <Icon name='search' color={'#808080'} size={24} />
                 <Styled.TextArea>
                     <Styled.Title>Categories</Styled.Title>
                 </Styled.TextArea>
-                <Icon name='search' color={'#808080'} size={24} />
-                {/* <BucketIcon /> */}
+                <Icon name='shopping-cart' color={'#808080'} size={24} />
             </Styled.Top>
             <Styled.TabArea>
                 <Styled.List>
@@ -28,6 +27,6 @@ export const Category: React.FC = () => {
                     }
                 </Styled.List>
             </Styled.TabArea>
-        </Styled.HomeWrapper >
+        </Styled.CategoryWrapper >
     )
 }

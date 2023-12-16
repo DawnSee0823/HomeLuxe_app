@@ -1,9 +1,10 @@
 import styled from "styled-components/native";
 
-export const HomeWrapper = styled.View`
+export const CategoryWrapper = styled.View`
     display: flex;
     padding: 24px;
     background-color: white;
+    height: 100%;
 `
 
 export const Top = styled.View`

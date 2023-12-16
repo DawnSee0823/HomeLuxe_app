@@ -3,10 +3,7 @@ import * as Styled from './index.style'
 import { Input, InputProps } from 'react-native-elements'
 import { Image, TouchableOpacity } from 'react-native'
 import { useNavigation } from "@react-navigation/native"
-import UserSvg from '../../assets/svg/user.svg'
-import PasswordSvg from '../../assets/svg/password.svg'
-import EyeSvg from '../../assets/svg/eye.svg'
-import EyeOffSvg from '../../assets/svg/eye-disable.svg'
+import Icon from 'react-native-vector-icons/Octicons'
 import Logo from '../../assets/img/logo.png'
 import { fontValue } from '../../utils/global_styles'
 import { useTypedDispatch, useTypedSelector } from '../../store/typeHooks'
@@ -30,28 +27,29 @@ export const SignIn: React.FC = () => {
     }
 
     const handleSignIn = () => {
-        if (userinput.current !== undefined && passinput.current !== undefined) {
-            if (credentials.username === '') {
-                userinput.current.focus();
-                userinput.current.shake();
-                setUserErr(true)
-                return;
-            }
-            if (credentials.password === '') {
-                passinput.current.focus();
-                passinput.current.shake();
-                setPassErr(true);
-                return;
-            }
-            setUserErr(false);
-            setPassErr(false);
-            const logindata = {
-                username: credentials.username,
-                password: credentials.password,
-            };
+        // if (userinput.current !== undefined && passinput.current !== undefined) {
+        //     if (credentials.username === '') {
+        //         userinput.current.focus();
+        //         userinput.current.shake();
+        //         setUserErr(true)
+        //         return;
+        //     }
+        //     if (credentials.password === '') {
+        //         passinput.current.focus();
+        //         passinput.current.shake();
+        //         setPassErr(true);
+        //         return;
+        //     }
+        //     setUserErr(false);
+        //     setPassErr(false);
+        //     const logindata = {
+        //         username: credentials.username,
+        //         password: credentials.password,
+        //     };
 
-            dispatch(loginUser(logindata))
-        }
+        //     dispatch(loginUser(logindata))
+        // }
+        navigation.navigate('Home')
     }
 
     useEffect(() => {
@@ -81,13 +79,13 @@ export const SignIn: React.FC = () => {
             </Styled.Logo>
             <Styled.FormContainer>
                 <Styled.InputGroup>
-                    {/* <Input
+                    <Input
                         label='Email'
                         ref={userinput}
                         // placeholder='Email'
-                        leftIcon={
-                            <UserSvg width={20} />
-                        }
+                        // leftIcon={
+                        //     <Icon name='user' size={20} />
+                        // }
                         onChangeText={value => handleChange(value, 'username')}
                         errorStyle={{ color: 'red' }}
                         errorMessage={isUserErr ? 'please input your username' : ''}
@@ -98,34 +96,28 @@ export const SignIn: React.FC = () => {
                         ref={passinput}
                         // placeholder='Password'
                         secureTextEntry={credentials.securePassword}
-                        leftIcon={
-                            <PasswordSvg width={20} />
-                        }
+                        // leftIcon={
+                        //     <Icon name='password' size={20} />
+                        // }
                         onChangeText={value => handleChange(value, 'password')}
                         rightIcon={
                             credentials.securePassword ?
                                 <TouchableOpacity onPress={() => handleChange(false, 'securePassword')}>
-                                    <EyeSvg width={20} />
+                                    <Icon name='eye' size={20} />
                                 </TouchableOpacity> :
                                 <TouchableOpacity onPress={() => handleChange(true, 'securePassword')}>
-                                    <EyeOffSvg width={20} />
+                                    <Icon name='eye-closed' size={20} />
                                 </TouchableOpacity>
                         }
                         errorStyle={{ color: 'red' }}
                         errorMessage={isPassErr ? 'please input your password' : ''}
                         style={{ fontSize: fontValue(20) }}
-                    /> */}
-                    <Input
-                        label='Email'
-                    />
-                    <Input
-                        label='Password'
                     />
                 </Styled.InputGroup>
                 <Styled.FormButton>
                     <Styled.TextButton>Password forgotten</Styled.TextButton>
-                    <GradientButton width={`200`} height='50' buttonText='Login' onPress={handleSignIn} flag={false} />
-                    <Styled.TextButton>Sign up</Styled.TextButton>
+                    <GradientButton width={`286px`} height='50px' buttonText='Login' flag={true} onPress={handleSignIn} />
+                    <Styled.TextButton onPress={() => navigation.navigate('SignUp')}>Sign up</Styled.TextButton>
                 </Styled.FormButton>
             </Styled.FormContainer>
         </Styled.SignInWrapper>

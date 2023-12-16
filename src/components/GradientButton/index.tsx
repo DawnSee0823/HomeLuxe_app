@@ -7,11 +7,12 @@ interface Props {
     width?: string;
     height?: string;
     flag?: boolean;
+    kind?: string;
 }
 
-const GradientButton: React.FC<Props> = ({ onPress, buttonText, width, height, flag }) => {
+const GradientButton: React.FC<Props> = ({ onPress, buttonText, width, height, flag, kind }) => {
     return (
-        <ButtonContainer>
+        <ButtonContainer height={height} width={width} flag={flag} onPress={onPress}>
             {/* <Button onPress={onPress} buttonWidth={Number(width)} height={Number(height)}>
                 <Gradient colors={['#539cff', '#466aca']} flag={flag}>
                     <TextContainer>
@@ -19,7 +20,7 @@ const GradientButton: React.FC<Props> = ({ onPress, buttonText, width, height, f
                     </TextContainer>
                 </Gradient>
             </Button> */}
-            <TextContainer>{buttonText}</TextContainer>
+            <TextContainer size={kind} flag={flag}>{buttonText}</TextContainer>
         </ButtonContainer>
     )
 }
