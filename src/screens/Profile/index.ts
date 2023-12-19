@@ -1,1 +1,7 @@
 export * from './Profile'
+export * from './MyOrder'
+export * from './Delivery'
+export * from './AddDelivery'
+export * from './Payment'
+export * from './AddPayment'
+export * from './Settings'

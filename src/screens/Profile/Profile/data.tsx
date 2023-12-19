@@ -4,26 +4,26 @@ export const profileData = [
     {
         title: 'My orders',
         subtitle: 'Already 10 orders',
-        url: ''
+        url: 'MyOrder'
     },
     {
         title: 'Delivery addresses',
         subtitle: '03 Adresses',
-        url: ''
+        url: 'Delivery'
     },
     {
         title: 'Method of payment',
         subtitle: 'You have 2 cards',
-        url: ''
+        url: 'MethodPayment'
     },
     {
         title: 'My reviews',
         subtitle: 'Reviews for 5 items',
-        url: ''
+        url: 'Reviews'
     },
     {
         title: 'Settings',
         subtitle: 'Notification, password, FAQ, contact',
-        url: ''
+        url: 'Settings'
     }
 ]

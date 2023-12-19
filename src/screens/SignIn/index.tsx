@@ -115,7 +115,7 @@ export const SignIn: React.FC = () => {
                     />
                 </Styled.InputGroup>
                 <Styled.FormButton>
-                    <Styled.TextButton>Password forgotten</Styled.TextButton>
+                    <Styled.TextButton onPress={() => navigation.navigate('ForgotPass')}>Password forgotten</Styled.TextButton>
                     <GradientButton width={`286px`} height='50px' buttonText='Login' flag={true} onPress={handleSignIn} />
                     <Styled.TextButton onPress={() => navigation.navigate('SignUp')}>Sign up</Styled.TextButton>
                 </Styled.FormButton>

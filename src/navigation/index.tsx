@@ -1,6 +1,6 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { Category, Checkout, Favorite, Home, MyCart, Payment, Product, Profile, Reviews, SignIn, SignUp, Validate } from '../screens'
+import { Category, Checkout, Favorite, Home, MyCart, MyOrder, Payment, Product, Profile, Reviews, SignIn, SignUp, Validate, Delivery, AddDelivery, ForgotPass, MethodPayment, Settings } from '../screens'
 
 const Stack = createNativeStackNavigator();
 
@@ -19,6 +19,12 @@ const AppNavigator = () => {
             <Stack.Screen name="Reviews" component={Reviews} options={{ headerShown: false }} />
             <Stack.Screen name="Validate" component={Validate} options={{ headerShown: false }} />
             <Stack.Screen name="Profile" component={Profile} options={{ headerShown: false }} />
+            <Stack.Screen name="MyOrder" component={MyOrder} options={{ headerShown: false }} />
+            <Stack.Screen name="Delivery" component={Delivery} options={{ headerShown: false }} />
+            <Stack.Screen name="AddDelivery" component={AddDelivery} options={{ headerShown: false }} />
+            <Stack.Screen name="ForgotPass" component={ForgotPass} options={{ headerShown: false }} />
+            <Stack.Screen name="MethodPayment" component={MethodPayment} options={{ headerShown: false }} />
+            <Stack.Screen name="Settings" component={Settings} options={{ headerShown: false }} />
         </Stack.Navigator>
         // <Product />
     )

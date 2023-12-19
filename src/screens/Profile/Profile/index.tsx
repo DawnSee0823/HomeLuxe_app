@@ -8,12 +8,13 @@ import { useNavigation } from "@react-navigation/native"
 import Avatar from '../../../assets/img/user.jpg'
 
 export const Profile = () => {
+    const navigation = useNavigation()
     return (
         <Styled.ProfileWrapper>
             <Styled.Top>
-                <Icon name='search' />
+                <Icon name='search' size={24} color={'#242424'} />
                 <Styled.Title>Profile</Styled.Title>
-                <Icon name='exit-to-app' />
+                <Icon name='exit-to-app' size={24} color={'#242424'} onPress={() => navigation.navigate('SignIn')} />
             </Styled.Top>
             <Styled.Intro>
                 <Image source={Avatar} alt='avatar' style={{ width: 80, height: 80, borderRadius: 50 }} />
@@ -25,13 +26,13 @@ export const Profile = () => {
             <Styled.Menu>
                 {
                     profileData.map((ele, id) => (
-                        <Styled.MenuItem>
+                        <Styled.MenuItem key={id} onPress={() => navigation.navigate(ele?.url)}>
                             <Styled.Left>
                                 <Styled.MenuTitle>{ele.title}</Styled.MenuTitle>
                                 <Styled.MenuDes>{ele.subtitle}</Styled.MenuDes>
                             </Styled.Left>
                             <Styled.Right>
-                                <Icon name='keyboard-arrow-right' />
+                                <Icon name='keyboard-arrow-right' size={24} color={'#242424'} />
                             </Styled.Right>
                         </Styled.MenuItem>
                     ))
